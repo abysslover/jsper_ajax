@@ -1,0 +1,16 @@
+<!ELEMENT person (name, address?)>
+<!ATTLIST person
+	name CDATA #REQUIRED
+	age CDATA #REQUIRED
+	birth CDATA #REQUIRED>
+<!-- Comment -->
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (nation, state, city, street)>
+<!ELEMENT nation (item+)>
+<!ELEMENT state (item+)>
+<!ELEMENT city (item+)>
+<!ELEMENT street (item+)>
+<!ELEMENT item EMPTY>
+<!ATTLIST item
+	code CDATA #REQUIRED
+	label CDATA #REQUIRED>

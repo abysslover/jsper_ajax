@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Hello AJAX User List</title>
+<style type="text/css" title="currentStyle" media="screen">
+	@import "css/HelloAJAXCounter.css";
+</style>
+<script language="Javascript" src="js/Ajax.js"></script>
+<script language="Javascript" src="js/Timer.js"></script>
+<script language="Javascript">
+	var ajaxFacade;
+	function updateFunction(id, response) {
+		var userList = document.getElementById(id);
+		var users = response.responseXML.documentElement;
+		generateTable(userList, users);
+	}
+	function generateTable(userList, users) {
+		var aTable = document.createElement("table");
+		var tBody = document.createElement("tbody");
+		aTable.appendChild(tBody);
+		for(var user = users.firstChild; user; user=user.nextSibling) {
+			var tr = document.createElement("tr");
+			var td = document.createElement("td");
+			tBody.appendChild(tr);
+			tr.appendChild(td);
+			td.innerHTML = user.firstChild.nodeValue;
+		}
+		td.className = "counts";
+		userList.innerHTML = "";
+		userList.appendChild(aTable);
+	}
+	window.onload = function() {
+		ajaxFacade = new Ajax();
+		timer.setFunction("ajaxFacade.update('userList', 'HelloAJAXUserList.jsp', '', updateFunction)");
+		timer.start();
+	}
+	window.onunload = function() {
+		timer.stop();
+		ajaxFacade.update(null, 'HelloAJAXUserListOut.jsp', '', function(){});
+	}
+	function login(userID, userPW) {
+		ajaxFacade.update('result', 'HelloLogin.jsp', 'userID=' + userID + '&userPW=' + userPW);
+	}
+</script>
+</head>
+<body>
+	<form>
+		<input type="text" id="userID" name="userID" />
+		<input type="text" id="userPW" name="userPW" />
+		<input type="button" value="실행" onclick="login(userID.value, userPW.value);" />
+	</form>
+	<div id="result"></div>
+	<div id="userList"></div>
+</body>
+</html>

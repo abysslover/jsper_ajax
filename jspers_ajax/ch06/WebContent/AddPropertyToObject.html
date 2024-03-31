@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Add Property To Object</title>
+<script language="Javascript">
+	function Father() {
+		this.name = "Father";
+		this.hello = function() {
+			alert("Hello "+this.name);
+		}
+		this.show = function() {
+			var report = document.getElementById("report");
+			report.innerHTML = "";
+			for(var attr in this) {
+				report.innerHTML += attr + " : " + this[attr] + " ";
+			}
+		};
+	}
+	var father = new Father();
+	function Adder() {}
+	Adder.prototype.addProperty = function(target) {
+		target.age = 59;
+	}
+	Adder.prototype.addFunction = function(target) {
+		target.getAge = function() {
+			return this.age;
+		}
+	}
+	var adder = new Adder();
+</script>
+</head>
+<body>
+	<input type="button" value="속성 테스트" onclick="alert(father.age);" />
+	<input type="button" value="함수 테스트" onclick="alert(father.getAge());" />
+	<input type="button" value="속성 추가" onclick="adder.addProperty(father);" />
+	<input type="button" value="함수 추가" onclick="adder.addFunction(father);" />
+</body>
+</html>

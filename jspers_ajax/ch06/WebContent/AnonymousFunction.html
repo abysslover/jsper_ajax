@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Anonymous Function</title>
+<script language="Javascript">
+	window.onload = function(e) {
+		var anony = document.getElementById("anony");
+		anony.onclick = function(e) {
+			alert("무명 함수를 호출하셨습니다.");
+		}
+	}
+</script>
+</head>
+<body>
+	<input id="anony" name="anony" value="무명 함수 호출" type="button" />
+</body>
+</html>

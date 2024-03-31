@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Object Structure</title>
+<script>
+	function hello(id) {
+		alert("hello " + id);
+	}
+
+	function getStackedString() {
+		return function(start) {
+			if (start.length <= 0) return "";
+				return start + arguments.callee(start.substring(0, start.length-1));
+		}
+	}
+	function Root() {
+		this.hello = hello;
+		this.getStackedString = getStackedString;
+	}
+	var myStructure = new Root();
+</script>
+
+</head>
+<body>
+	<form>
+		id : <input type="text" name="userId" /><p />
+		start : <input type="text" name="startValue" /><p />
+		<input type="button" value="hello 기능" onclick="myStructure.hello(userId.value);" /><p />
+		<input type="button" value="재귀 호출 기능"
+onclick="alert(myStructure.getStackedString()(startValue.value));" />
+		<input type="button" value="hello 기능(배열 접근)" onclick="myStructure['hello'](userId.value);" /><p />
+		<input type="button" value="재귀 호출 기능(배열 접근)"
+onclick="alert(myStructure['getStackedString']()(startValue.value));" /><p />
+	</form>
+</body>
+</html>

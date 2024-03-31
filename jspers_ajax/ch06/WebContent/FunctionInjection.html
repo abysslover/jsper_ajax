@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Function Injection</title>
+<script language="Javascript">
+	function normalFunction(arg1, arg2) {
+		alert('normal Function ' + arg1 + " " + arg2);
+	}
+	function Injector(){}
+	Injector.prototype.inject = function(injectFunction) {
+		var funcStub = normalFunction.toString().match(/\s*function\s+(.*)\((.*)\)\s*{\s*(.*)\s*}/);
+		var funcName = funcStub[1];
+		var funcArguments = funcStub[2].split(",");
+		var funcBody = funcStub[3];
+		funcArguments.push("addedArgument");
+		funcBody += injectFunction;
+		this.injectedFunction = new Function(funcArguments, funcBody);
+	}
+	Injector.prototype.injectedFunction = function() {}
+	var injector = new Injector();
+</script>
+</head>
+<body>
+	<input type="button" value="Injection" onclick="injector.inject('alert(addedArgument);');" />
+	<input type="button" value="실행"
+onclick="injector.injectedFunction('Hello', 'Magneto', '안녕하세요. 추가된 파라미터입니다.');" />
+</body>
+</html>

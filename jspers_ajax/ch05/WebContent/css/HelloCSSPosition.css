@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+div {
+	border:				solid 1px;
+	position:			relative;
+}
+#first {
+	padding:			15px;
+	background-color:	rgb(100%, 0%, 50%);
+	height:				150px;
+}
+
+#second {
+	background-color:	rgb(100%, 30%, 50%);
+	float:				left;
+	height:				80px;
+}
+
+#third {
+	background-color:	rgb(100%, 50%, 50%);
+	float:				right;
+	height:				50px;
+}
+
+#fourth {
+	background-color:	rgb(100%, 70%, 50%);
+	height:				100px;
+}
+
+#fifth {
+	background-color:	rgb(100%, 100%, 50%);
+	top:				100px;
+}

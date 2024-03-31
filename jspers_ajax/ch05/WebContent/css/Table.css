@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+table {
+	float:				left;
+	background-color:	white;
+	padding:			0px;
+	width:				100px;
+}
+
+td {
+	background-color:	orange;
+}
+
+td.yellowClass {
+	background-color:	yellow;
+}
+
+td.blueClass {
+	background-color:	blue;
+}

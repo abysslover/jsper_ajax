@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from GreetServiceService WSDL service -->
+
+  <service name="GreetService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservice.ch04.blackbook1.book.javawide.com"/>
+      <parameter name="wsdlServiceElement" value="GreetServiceService"/>
+      <parameter name="schemaQualified" value="http://webservice.ch04.blackbook1.book.javawide.com"/>
+      <parameter name="wsdlServicePort" value="GreetService"/>
+      <parameter name="className" value="com.javawide.book.blackbook1.ch04.webservice.GreetService"/>
+      <parameter name="wsdlPortType" value="GreetService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:retNS="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="add" qname="operNS:add" returnQName="retNS:addReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:op1" type="tns:int"/>
+        <parameter xmlns:pns="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:op2" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:retNS="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="divide" qname="operNS:divide" returnQName="retNS:divideReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:op1" type="tns:int"/>
+        <parameter xmlns:pns="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:op2" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:retNS="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="multiply" qname="operNS:multiply" returnQName="retNS:multiplyReturn" returnType="rtns:long" soapAction="">
+        <parameter xmlns:pns="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:op1" type="tns:int"/>
+        <parameter xmlns:pns="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:op2" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:retNS="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="minus" qname="operNS:minus" returnQName="retNS:minusReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:op1" type="tns:int"/>
+        <parameter xmlns:pns="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:op2" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:retNS="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="doGreet" qname="operNS:doGreet" returnQName="retNS:doGreetReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.ch04.blackbook1.book.javawide.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="minus doGreet multiply divide add"/>
+
+  </service>
+</deployment>

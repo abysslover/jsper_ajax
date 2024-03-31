@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Hello $()</title>
+<script language="Javascript" src="js/prototype.js"></script>
+<script language="Javascript">
+	function showText(id) {
+		if(!id || "" == id)	return;
+		$('result').innerHTML = $(id).firstChild.nodeValue || "Nothing";
+	}
+	function changeBackgroundColors() {
+		var elems = $('hello', 'magneto', 'abysslover', 'koreanginseng');
+		var len = elems.length;
+		for(var i=0; i<len; ++i) {
+			var percent = (i+1)/len*100;
+			var RGBValue = 'rgb(' + percent + '%, ' + percent + '%, ' + '100%)';
+			elems[i].style.backgroundColor = RGBValue;
+		}
+	}
+	function changeSelectedValue(id) {
+		$(id).innerHTML = $F('selectingID');
+	}
+</script>
+</head>
+<body>
+	<div id="root">
+		<div id="hello">magneto</div>
+		<div id="magneto">abysslover</div>
+		<div id="abysslover">koreanginseng</div>
+		<div id="koreanginseng">juggernaut</div>
+	</div>
+	<form>
+		<input type="text" id="selectingID" name="selectingID" onkeyup="changeSelectedValue('result');" />
+		<input type="button" value="내용 보기" onclick="showText(selectingID.value);" />
+		<input type="button" value="배경색 변경" onclick="changeBackgroundColors();" />
+	</form>
+	<div id="result"></div>
+</body>
+</html>

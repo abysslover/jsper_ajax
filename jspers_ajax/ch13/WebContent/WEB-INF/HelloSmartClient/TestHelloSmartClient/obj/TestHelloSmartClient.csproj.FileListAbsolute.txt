@@ -1,0 +1,10 @@
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\TestHelloSmartClient\bin\Release\TestHelloSmartClient.exe
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\TestHelloSmartClient\bin\Release\TestHelloSmartClient.pdb
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\TestHelloSmartClient\obj\Release\ResolveAssemblyReference.cache
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\TestHelloSmartClient\obj\Release\TestHelloSmartClient.Properties.Resources.resources
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\TestHelloSmartClient\obj\Release\TestHelloSmartClient.csproj.GenerateResource.Cache
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\TestHelloSmartClient\obj\Release\TestHelloSmartClient.exe
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\TestHelloSmartClient\obj\Release\TestHelloSmartClient.pdb
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\TestHelloSmartClient\bin\Release\HelloSmartClient.dll
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\TestHelloSmartClient\bin\Release\HelloSmartClient.pdb
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\TestHelloSmartClient\obj\Release\TestHelloSmartClient.TestHelloSmartClient.resources

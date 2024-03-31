@@ -1,0 +1,8 @@
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\CASRegister.CASRegister.resources
+obj\Release\CASRegister.Properties.Resources.resources
+obj\Release\CASRegister.csproj.GenerateResource.Cache
+bin\Release\CASRegister.exe
+bin\Release\CASRegister.pdb
+obj\Release\CASRegister.exe
+obj\Release\CASRegister.pdb

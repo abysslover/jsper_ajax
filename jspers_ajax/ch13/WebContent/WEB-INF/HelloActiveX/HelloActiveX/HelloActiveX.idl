@@ -1,0 +1,49 @@
+// HelloActiveX.idl : HelloActiveX의 IDL 소스입니다.
+//
+
+// 이 파일은 MIDL 도구에 의해 처리되어
+// 형식 라이브러리(HelloActiveX.tlb) 및 마샬링 코드가 생성됩니다.
+
+#include "olectl.h"
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(866B3ACB-FE6A-4D4F-90C6-41167C97355D),
+	dual,
+	nonextensible,
+	helpstring("IHelloTable 인터페이스"),
+	pointer_default(unique)
+]
+interface IHelloTable : IDispatch{
+};
+
+[
+	uuid(8C17399A-E67B-4A17-A38C-35244A460CA3),
+	version(1.0),
+	helpstring("HelloActiveX 1.0 형식 라이브러리")
+]
+library HelloActiveXLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(45869562-E514-4F7C-A857-FCA8CB6A108B),
+		helpstring("_IHelloTableEvents Interface")
+	]
+	dispinterface _IHelloTableEvents
+	{
+		properties:
+		methods:
+	};
+	[
+		uuid(BBD89E42-E5DA-4276-8115-0AECA996AD52),
+		control,
+		helpstring("HelloTable Class")
+	]
+	coclass HelloTable
+	{
+		[default] interface IHelloTable;
+		[default, source] dispinterface _IHelloTableEvents;
+	};
+};

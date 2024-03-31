@@ -1,0 +1,33 @@
+HKCR
+{
+	HelloActiveX.HelloTable.1 = s 'HelloTable Class'
+	{
+		CLSID = s '{BBD89E42-E5DA-4276-8115-0AECA996AD52}'
+	}
+	HelloActiveX.HelloTable = s 'HelloTable Class'
+	{
+		CLSID = s '{BBD89E42-E5DA-4276-8115-0AECA996AD52}'
+		CurVer = s 'HelloActiveX.HelloTable.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {BBD89E42-E5DA-4276-8115-0AECA996AD52} = s 'HelloTable Class'
+		{
+			ProgID = s 'HelloActiveX.HelloTable.1'
+			VersionIndependentProgID = s 'HelloActiveX.HelloTable'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+			}
+			val AppID = s '%APPID%'
+			ForceRemove 'Control'
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 103'
+			'MiscStatus' = s '0'
+			{
+			    '1' = s '%OLEMISC%'
+			}
+			'TypeLib' = s '{8C17399A-E67B-4A17-A38C-35244A460CA3}'
+			'Version' = s '1.0'
+		}
+	}
+}

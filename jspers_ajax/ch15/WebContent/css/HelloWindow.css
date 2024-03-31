@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+.HelloWindow_TitleArea {
+	background:		dodgerblue;
+}
+
+.HelloWindow_ContentHeader, .HelloWindow_Content, .HelloWindow_ContentFooter, .HelloWindow_StatusBar, .HelloWindow_StatusMessage, .HelloWindow_StatusProgress {
+	background:		white;
+}

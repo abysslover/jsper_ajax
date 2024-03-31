@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+form input {
+	background:				orange;
+	width:					150px;
+}
+
+form input#helloText {
+	background-color:		rgb(30%, 60%, 20%);
+	background-image:		url(../img/Magneto.jpg);
+}
+
+form input[type="checkbox"] {
+	width:					15px;
+}

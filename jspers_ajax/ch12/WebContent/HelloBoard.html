@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Hello AJAX Board</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script language="Javascript" src="js/prototype.js"></script>
+<script language="Javascript" src="js/deserialize.js"></script>
+<script language="Javascript" src="js/Window.js"></script>
+<script language="Javascript" src="js/paging.js"></script>
+<script language="Javascript" src="js/ajaxBoard.js"></script>
+<script language="Javascript">
+	var board;
+	Event.observe(window, "load", function(evt) {
+		board = new AJAXBoard({title: 'Hello Board'});
+	});
+</script>
+</head>
+<body>
+	<input type="button" id="openBoard" name="openBoard" value="게시판 열기" onclick="board.setVisible(true);" />
+</body>
+</html>

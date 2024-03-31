@@ -1,0 +1,16 @@
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClient\obj\Debug\ResolveAssemblyReference.cache
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClient\obj\Debug\HelloSmartClient.HelloSmartClient.resources
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClient\obj\Debug\HelloSmartClient.csproj.GenerateResource.Cache
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClient\bin\Debug\HelloSmartClient.dll.config
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClient\bin\Debug\HelloSmartClient.dll
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClient\bin\Debug\HelloSmartClient.pdb
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClient\obj\Debug\HelloSmartClient.dll
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClient\obj\Debug\HelloSmartClient.pdb
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClient\bin\Release\HelloSmartClient.dll.config
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClient\bin\Release\HelloSmartClient.dll
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClient\bin\Release\HelloSmartClient.pdb
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClient\obj\Release\ResolveAssemblyReference.cache
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClient\obj\Release\HelloSmartClient.HelloSmartClient.resources
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClient\obj\Release\HelloSmartClient.csproj.GenerateResource.Cache
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClient\obj\Release\HelloSmartClient.dll
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClient\obj\Release\HelloSmartClient.pdb

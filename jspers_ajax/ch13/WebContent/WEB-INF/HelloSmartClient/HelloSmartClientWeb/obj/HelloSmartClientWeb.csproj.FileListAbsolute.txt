@@ -1,0 +1,5 @@
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClientWeb\bin\HelloSmartClientWeb.dll
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClientWeb\bin\HelloSmartClientWeb.pdb
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClientWeb\obj\Release\ResolveAssemblyReference.cache
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClientWeb\obj\Release\HelloSmartClientWeb.dll
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\HelloSmartClientWeb\obj\Release\HelloSmartClientWeb.pdb

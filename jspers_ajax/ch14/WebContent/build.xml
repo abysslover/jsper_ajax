@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     2008. 03. 20 오후 4:48:50                                                        
+
+     HelloApplet    
+     HelloApplet의 파일을 jar 파일로 만듭니다.
+                   
+     magneto                                                                
+     ====================================================================== -->
+<project name="HelloApplet" default="default" basedir="..">
+	<property name="srcdir" value="${basedir}/build/classes">
+	</property>
+	<property name="dstdir" value="${basedir}/WebContent/applet">
+	</property>
+	<description>
+		HelloApplet의 파일을 jar 파일로 만듭니다.
+    </description>
+
+	<!-- ================================= 
+          target: default              
+         ================================= -->
+	<target name="default" description="HelloApplet의 파일을 복사해 옵니다.">
+		<antcall target="signHelloApplet">
+		</antcall>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: makeCertificate                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="generateKey">
+		<exec dir="${dstdir}" executable="keytool">
+			<arg value="-genkey" />
+			<arg value="-alias" />
+			<arg value="HelloApplet" />
+			<arg value="-keystore" />
+			<arg value="HelloAppletKeyStore" />
+			<arg value="-keypass" />
+			<arg value="magneto" />
+			<arg value="-storepass" />
+			<arg value="magneto" />
+			<arg value="-dname" />
+			<arg value="cn=Lim Eun Cheon, o=javawide.com, l=Suncheon, s=Jeolla, C=Korea" />
+		</exec>
+	</target>
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: selfCertificate                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="selfCertificate">
+		<exec dir="${dstdir}" executable="keytool">
+			<arg value="-selfcert" />
+			<arg value="-alias" />
+			<arg value="HelloApplet" />
+			<arg value="-keystore" />
+			<arg value="HelloAppletKeyStore" />
+			<arg value="-keypass" />
+			<arg value="magneto" />
+			<arg value="-storepass" />
+			<arg value="magneto" />
+			<arg value="-dname" />
+			<arg value="cn=Lim Eun Cheon, o=javawide.com, l=Suncheon, s=Jeolla, C=Korea" />
+		</exec>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: signHelloApplet                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="signHelloApplet" description="HelloApplet의 Signed Jar 파일을 생성합니다.">
+		<jar basedir="${srcdir}" destfile="${dstdir}/HelloApplet.jar" />
+		<antcall target="generateKey" />
+		<antcall target="selfCertificate" />
+		<signjar signedjar="${dstdir}/SignedHelloApplet.jar" jar="${dstdir}/HelloApplet.jar" alias="HelloApplet" keystore="${dstdir}/HelloAppletKeyStore" storepass="magneto"></signjar>
+	</target>
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: copyHelloApplet                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="copyHelloApplet">
+		<echo message="${srcdir} -> ${dstdir}">
+		</echo>
+		<copy todir="${dstdir}" overwrite="true">
+			<fileset dir="${srcdir}" />
+		</copy>
+	</target>
+
+</project>

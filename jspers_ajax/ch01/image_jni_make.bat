@@ -1,0 +1,4 @@
+cd workspace\ch01\bin
+javah -jni com.javawide.book.blackbook1.ch01.image.jni.CxImageWrapper
+copy com_javawide_book_blackbook1_ch01_image_jni_CxImageWrapper.h com_javawide_book_blackbook1_ch01_image_jni_CxImageWrapper.cpp
+pause

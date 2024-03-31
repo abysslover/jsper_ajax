@@ -1,0 +1,12 @@
+[version]
+signature="$CHICAGO$"
+AdvancedINF=2.0
+
+[Add.Code]
+HelloActiveX.dll=HelloActiveX.dll
+
+[HelloActiveX.dll]
+file-win32-x86=thiscab
+clsid={BBD89E42-E5DA-4276-8115-0AECA996AD52}
+FileVersion=1,0,0,1
+RegisterServer=yes

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="xslt/menu.xsl" type="text/xsl" media="screen" ?>
+<jwide:menus xmlns="http://javawide.com/menu"
+	xmlns:jwide="http://javawide.com/menu"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://javawide.com/menu xsd/menu.xsd"
+	title="root" href="#">
+	<menu hovercolor="lightskyblue" blurcolor="white" href="http://javawide.com" title="자바 와이드" />
+	<menu href="#friend" title="친구">
+		<menu href="http://ikstyle.net" title="일가 홈페이지"></menu>
+	</menu>
+	<menu href="#searchEngine" title="검색 엔진">
+		<menu href="http://www.naver.com" title="네이버"></menu>
+		<menu href="http://www.google.com" title="구글"></menu>
+	</menu>
+	<menu href="#community" title="커뮤니티">
+		<menu href="http://okjsp.pe.kr" title="okjsp"></menu>
+		<menu href="http://taeyo.net" title="태요"></menu>
+	</menu>
+</jwide:menus>

@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloActiveX", "HelloActiveX\HelloActiveX.vcproj", "{39717A23-6B8F-4053-8B04-50187E8A7D88}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloActiveXPS", "HelloActiveX\HelloActiveXPS.vcproj", "{727D2E76-F8F1-436D-BA71-3A8999969119}"
+	ProjectSection(ProjectDependencies) = postProject
+		{39717A23-6B8F-4053-8B04-50187E8A7D88} = {39717A23-6B8F-4053-8B04-50187E8A7D88}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39717A23-6B8F-4053-8B04-50187E8A7D88}.Debug|Win32.ActiveCfg = Debug|Win32
+		{39717A23-6B8F-4053-8B04-50187E8A7D88}.Debug|Win32.Build.0 = Debug|Win32
+		{39717A23-6B8F-4053-8B04-50187E8A7D88}.Release|Win32.ActiveCfg = Release|Win32
+		{39717A23-6B8F-4053-8B04-50187E8A7D88}.Release|Win32.Build.0 = Release|Win32
+		{727D2E76-F8F1-436D-BA71-3A8999969119}.Debug|Win32.ActiveCfg = Debug|Win32
+		{727D2E76-F8F1-436D-BA71-3A8999969119}.Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

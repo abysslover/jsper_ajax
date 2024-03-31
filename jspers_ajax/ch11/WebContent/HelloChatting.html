@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Hello Chatting</title>
+<script language="Javascript" src="js/prototype.js"></script>
+<script language="Javascript" src="js/Window.js"></script>
+<script language="Javascript" src="js/ajaxChatting.js"></script>
+<script language="Javascript">
+	var chatWindow;
+	Event.observe(window, "load", function(evt) {
+		chatWindow = new Chatting({title: "Hello Chatting", chatURL : "HelloChatting.jsp"});
+	});
+	function login(_userID, _userPW) {
+		var param = {
+			userID : _userID,
+			userPW : _userPW
+		}
+		new Ajax.Request("HelloLogin.jsp", {parameters: param, onSuccess: function(res) {
+			alert(res.responseText);
+		}});
+	}
+</script>
+</head>
+<body>
+	<form id="loginForm" name="loginForm">
+		<input type="text" id="userID" name="userID" />
+		<input type="text" id="userPW" name="userPW" />
+		<input type="button" value="로그인 하기" onclick="login(userID.value, userPW.value);" />
+	</form>
+	<form>
+		<input type="button" value="채팅창 열기" onclick="chatWindow.setVisible(true);" />
+	</form>
+</body>
+</html>

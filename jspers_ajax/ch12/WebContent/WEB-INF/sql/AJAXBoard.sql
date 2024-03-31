@@ -1,0 +1,13 @@
+CREATE TABLE AJAXBoard(
+	id BIGINT,
+	writtentime INT DEFAULT DATEDIFF(ss, '19700101', GETDATE()),
+	writer VARCHAR(24) NOT NULL,
+	subcount SMALLINT DEFAULT 0,
+	reads INT DEFAULT 0,
+	deleted BIT DEFAULT 0,
+	subject VARCHAR(200) NOT NULL,
+	content TEXT NOT NULL,
+	PRIMARY KEY(id)
+);
+go
+DROP TABLE AJAXBoard;

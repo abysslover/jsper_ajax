@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glossary xmlns:magneto="http://javawide.com"
+	xmlns:kangik="http://ikstyle.net"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://javawide.com http://javawide.com/xsd/limeuncheon.xsd
+		http://ikstyle.net xsd/kangik.xsd">
+	<kangik:car owner="magneto">
+		<kangik:info cc="3000" length="2500" weight="2500" price="1000" />
+	</kangik:car>
+	<kangik:car owner="oldid">
+		<kangik:info cc="2000" length="2000" weight="800" price="700" />
+	</kangik:car>
+	<magneto:person>
+		<magneto:info korean="임은천" english="lim eun cheon" id="magneto" />
+		<magneto:info korean="강익" english="kang ik" id="oldid" />
+	</magneto:person>
+</glossary>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" initialize="getWriting();">
+	<mx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import mx.rpc.events.ResultEvent;
+			import mx.controls.Alert;
+			import mx.rpc.events.FaultEvent;
+
+			[Bindable]
+			private var HelloBoardResult:ArrayCollection;
+			
+			private function getWriting():void {
+				HelloFlexBoardObject.getWriting();
+			}
+			
+			private function getWritingHandler(event:ResultEvent):void {
+				HelloBoardResult = event.result as ArrayCollection;
+			}
+			
+			private function faultHandler(event:FaultEvent):void {
+				Alert.show(event.fault.getStackTrace(), "에러");
+			}
+		]]>
+	</mx:Script>
+	<mx:DataGrid x="10" y="10" id="HelloDataGrid" dataProvider="{HelloBoardResult}" />
+	<mx:RemoteObject id="HelloFlexBoardObject" destination="HelloFlexBoard" showBusyCursor="true"
+		fault="faultHandler(event)">
+		<mx:method name="getWriting" result="getWritingHandler(event)"/>
+	</mx:RemoteObject>	
+</mx:Application>

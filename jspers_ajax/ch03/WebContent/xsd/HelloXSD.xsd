@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/HelloXSD" xmlns:tns="http://www.example.org/HelloXSD" elementFormDefault="qualified">
+
+    <complexType name="PersonType">
+    	<sequence>
+    		<element name="name" type="string"></element>
+    		<element name="address" type="tns:AddressType" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+        <attributeGroup ref="tns:PersonAttributeGroup"></attributeGroup>
+    </complexType>
+
+    <complexType name="AddressType">
+    	<sequence>
+    		<element name="nation" type="tns:SubAddressType"></element>
+    		<element name="state" type="tns:SubAddressType"></element>
+    		<element name="city" type="tns:SubAddressType"></element>
+    		<element name="street" type="tns:SubAddressType"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="SubAddressType">
+    	<sequence>
+    		<element name="item" type="tns:ItemType" maxOccurs="unbounded" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ItemType">
+        <attributeGroup ref="tns:ItemAttributeGroup"></attributeGroup>
+    </complexType>
+
+    <attributeGroup name="PersonAttributeGroup">
+    	<attribute name="name" type="string"></attribute>
+    	<attribute name="age" type="string"></attribute>
+    	<attribute name="birth" type="string"></attribute>
+    </attributeGroup>
+
+    <attributeGroup name="ItemAttributeGroup">
+    	<attribute name="code" type="string"></attribute>
+    	<attribute name="label" type="string"></attribute>
+    </attributeGroup>
+
+    <element name="person" type="tns:PersonType"></element>
+</schema>

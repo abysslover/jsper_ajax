@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://javawide.com"
+	xmlns:magneto="http://javawide.com" elementFormDefault="qualified">
+
+    <element name="glossary" type="magneto:GlossaryType"></element>
+    
+    <complexType name="GlossaryType">
+    	<sequence>
+    		<element name="person" type="magneto:PersonType"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="PersonType">
+    	<sequence>
+    		<element name="info" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <attributeGroup name="InfoAttributeGroup">
+    	<attribute name="id" type="ID" use="required"></attribute>
+    	<attribute name="korean" type="magneto:OnlyKoreanType"></attribute>
+    	<attribute name="english" type="magneto:OnlyEnglishType"></attribute>
+    </attributeGroup>
+
+    <simpleType name="OnlyKoreanType">
+    	<restriction base="string">
+    		<pattern value="[ㄱ-ㅎ]"></pattern>
+    	</restriction>
+    </simpleType>
+
+    <simpleType name="OnlyEnglishType">
+    	<restriction base="string">
+    		<pattern value="[a-zA-Z]"></pattern>
+    	</restriction>
+    </simpleType>
+</schema>

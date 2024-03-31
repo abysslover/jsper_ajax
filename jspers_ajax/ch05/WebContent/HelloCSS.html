@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Early HTML</title>
+<link href="css/HelloCSS.css" rel="stylesheet" type="text/css" media="screen"></link>
+<script language="Javascript">
+	function HelloClickHandler(clickEvent) {
+		alert("Hello Early HTML");
+	}
+	function CSSClassChangeHandler(clickEvent) {
+		var tdYellow = getElementByTagWithClass("td", "yellowClass");
+		if(!tdYellow) return;
+		tdYellow.className = "blueClass";
+	}
+	
+	function getElementByTagWithClass(elementName, className) {
+		var elems = document.getElementsByTagName(elementName);
+		var length = elems.length;
+		for(var i=0; i< length; ++i) {
+			if(elems[i].className == className) return elems[i];
+		}
+	}
+	
+	function MasterCSSChangeHandler(clickEvent) {
+		var link = document.getElementsByTagName("link")[0];
+		if(document.all) {
+			var cloneNode = link.cloneNode(true);
+			var parent = link.parentNode;
+			parent.removeChild(link);
+			cloneNode.setAttribute("href", "css/HelloCSS2.css");
+			parent.appendChild(cloneNode);
+		} else {
+			link.setAttribute("href", "css/HelloCSS2.css");
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>Hello Early HTML</h1>
+	<table>
+		<tr><td>Hello Orange</td></tr>
+		<tr><td class="yellowClass">Hello Yellow</td></tr>
+	</table>
+	<form>
+		<input type="text" id="helloText" name="helloText" />
+		<label for="HelloCheck">CSS가 멋진가요?</label>
+		<input type="checkbox" id="helloCheck" name="helloCheck" />
+		<input type="button" value="안녕" onclick="HelloClickHandler();"/>
+		<input type="button" value="className 바꾸기" onclick="CSSClassChangeHandler();" />
+		<input type="button" value="마스터 CSS 변경하기" onclick="MasterCSSChangeHandler();" />
+	</form>
+	<div id="parentDiv" style="clear:left;">부모
+		<div style="background-color:cornflowerblue;">자식</div>
+		부모
+	</div>
+</body>
+</html>

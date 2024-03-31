@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Hello Uploader</title>
+<script language="Javascript" src="js/prototype.js"></script>
+<script language="Javascript" src="js/Window.js"></script>
+<script language="Javascript" src="js/ajaxUploader.js"></script>
+<script language="Javascript">
+	var uploader;
+	Event.observe(window, "load", function(evt) {
+		uploader = new SingleUploader({title : "Single Uploader"});
+	});
+</script>
+</head>
+<body>
+	<form>
+		<input type="button" value="업로더 열기" onclick="uploader.setVisible(true);" />
+	</form>	
+</body>
+</html>

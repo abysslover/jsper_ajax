@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Hello AJAX</title>
+<script language="Javascript" src="js/Ajax.js"></script>
+<script language="Javascript" type="text/javascript">
+	var ajaxFacade;
+	window.onload = function() {
+		ajaxFacade = new Ajax();
+	}
+	function updateFunction(id, response) {
+		var expression = "/hello/greetMessage[@to]";
+		var greetNode;
+		var responseXML = response.responseXML;
+		if(window.ActiveXObject) {
+			greetNode = responseXML.selectSingleNode(expression);
+		} else if(window.XMLHttpRequest) {
+			greetNode = responseXML.evaluate(expression, responseXML, null, XPathResult.ANY_TYPE,
+			null).iterateNext();
+		}
+		var message = greetNode.textContent || greetNode.text;
+		var to = greetNode.getAttribute("to");
+		document.getElementById(id).innerHTML = message + " " + to + "님";
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="실행"
+	onclick="ajaxFacade.update('result', 'HelloAJAX.jsp', 'name=Magneto', updateFunction);" />
+	<div id="result" />
+</body>
+</html>

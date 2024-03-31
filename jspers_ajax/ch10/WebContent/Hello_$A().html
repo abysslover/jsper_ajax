@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Hello $A()</title>
+<script language="Javascript" src="js/prototype.js"></script>
+<script language="Javascript">
+	function getInputIDs() {
+		var inputs = document.getElementsByTagName("input");
+		var result = $("result");
+		$A(inputs).each(function(element) {
+			result.innerHTML += "id : " + element.getAttribute("id") + "<p />";
+		});
+	}
+	function getParameterString() {
+		this.getPair = function(key, value) {
+			return [encodeURIComponent(key), (null == value) ? '' : encodeURIComponent(value)]; 		
+		}
+		var inputs = document.getElementsByTagName("input");
+		var result = $("result");
+		var paramHash = {};
+		$A(inputs).each(function(element) {
+			var type = element.getAttribute("type");
+			if("button" == type) return;
+			var key = element.getAttribute("name");
+			paramHash[key] = getPair(key, element.getAttribute("value"));
+			result.innerHTML += paramHash[key].join("=") + "&amp;";
+		});
+	}
+	var paramString = new getParameterString();
+	function getParameterStringFromHash() {
+		var pairs = {};
+		var inputs = document.getElementsByTagName("input");
+		$A(inputs).each(function(element) {
+			var type = element.getAttribute("type");
+			if(type == "button") return;
+			var key = element.getAttribute("name");
+			var value = element.getAttribute("value");
+			pairs[key] = value;
+		});
+		$("result").innerHTML = $H(pairs).toQueryString();
+	}
+	function getSimpleParameterString() {
+		var paramList = {
+			userID : "magneto",
+			userName : "임은천",
+			userPW : "unknown"
+		};
+		$("result").innerHTML = $H(paramList).toQueryString();
+	}
+	
+	function getSerializedString() {
+		$("result").innerHTML = Form.serialize('hashForm');
+	}
+</script>
+</head>
+<body>
+	<form id="hashForm" name="hashForm">
+		<input type="text" id="userID" name="userID" value="magneto" />
+		<input type="text" id="userName" name="userName" value="임은천" />
+		<input type="password" id="userPW" name="userPW" value="unknown" />
+	</form>
+	<form>
+		<input type="button" id="infoButton" name="infoButton" value="id 획득" onclick="getInputIDs(); " />
+		<input type="button" id="paramButton" name="paramButton" value="파라미터 획득"
+		onclick="getParameterString(); " />
+		<input type="button" id="helloMagneto" name="helloMagneto" value="Hello=Magneto 출력"
+		onclick="alert(paramString.getPair('Hello', 'Magneto').join('='));" />
+		<input type="button" id="paramHashButton" name="paramHashButton" value="파라미터 값 획득(Hash)"
+		onclick="getParameterStringFromHash();" />
+		<input type="button" id="simpleHashButton" name="simpleHashButton" value="파라미터 값 획득(shortest)"
+		onclick="getSimpleParameterString();" />
+		<input type="button" id="serializeButton" name="serializeButton" value="파라미터 값 획득(serialize)"
+		onclick="getSerializedString();" />
+	</form>
+	<div id="result"></div>
+</body>
+</html>

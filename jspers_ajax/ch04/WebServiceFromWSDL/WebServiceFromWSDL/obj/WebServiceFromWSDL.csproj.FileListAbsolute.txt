@@ -1,0 +1,9 @@
+C:\연구\책\BlackBook1\CSharp예제\WebServiceFromWSDL\WebServiceFromWSDL\bin\Debug\WebServiceFromWSDL.exe
+C:\연구\책\BlackBook1\CSharp예제\WebServiceFromWSDL\WebServiceFromWSDL\bin\Debug\WebServiceFromWSDL.pdb
+C:\연구\책\BlackBook1\CSharp예제\WebServiceFromWSDL\WebServiceFromWSDL\obj\Debug\ResolveAssemblyReference.cache
+C:\연구\책\BlackBook1\CSharp예제\WebServiceFromWSDL\WebServiceFromWSDL\obj\Debug\WebServiceFromWSDL.Properties.Resources.resources
+C:\연구\책\BlackBook1\CSharp예제\WebServiceFromWSDL\WebServiceFromWSDL\obj\Debug\WebServiceFromWSDL.WebServiceFromWSDL.resources
+C:\연구\책\BlackBook1\CSharp예제\WebServiceFromWSDL\WebServiceFromWSDL\obj\Debug\WebServiceFromWSDL.csproj.GenerateResource.Cache
+C:\연구\책\BlackBook1\CSharp예제\WebServiceFromWSDL\WebServiceFromWSDL\obj\Debug\WebServiceFromWSDL.exe
+C:\연구\책\BlackBook1\CSharp예제\WebServiceFromWSDL\WebServiceFromWSDL\obj\Debug\WebServiceFromWSDL.pdb
+C:\연구\책\BlackBook1\CSharp예제\WebServiceFromWSDL\WebServiceFromWSDL\bin\Debug\WebServiceFromWSDL.exe.config

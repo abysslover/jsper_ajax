@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Constructor, InstanceOf</title>
+<script language="Javascript">
+	function Person() {
+		this.name = "aPerson";
+	}
+	function instanceOf(subObj, superObject) {
+		if("function" != typeof superObject) return false;
+		var superObj = new superObject();
+		for(var attr in superObj) {
+			if(typeof subObj[attr] != typeof superObj[attr]) return false;
+		}
+		return true;
+	}
+	function Father() {
+		this.name = "Father";
+		this.hello = function() {
+			alert("Hello "+this.name);
+		}
+		this.show = function() {
+			var report = document.getElementById("report");
+			report.innerHTML = "";
+			for(var attr in this) {
+				report.innerHTML += attr + " : " + this[attr] + " ";
+			}
+		};
+	}
+	function Car() {
+		this.name = "aCar";
+	}
+	Father.prototype = new Person();
+	var father = new Father();
+	var car = new Car();
+</script>
+</head>
+<body>
+	<input type="button" value="생성자" onclick="alert(father.constructor);" />
+	<input type="button" value="옳은 상속" onclick="alert(instanceOf(father, Person));" />
+	<input type="button" value="틀린 상속" onclick="alert(instanceOf(car, Person));" />
+	<input type="button" value="옳은 상속(키워드)" onclick="alert(father instanceof Person);" />
+	<input type="button" value="틀린 상속(키워드)" onclick="alert(car instanceof Person);" />
+	<div id="report" ></div>
+</body>
+</html>

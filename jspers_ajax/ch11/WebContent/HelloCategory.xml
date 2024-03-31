@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hello:categories name="카테고리 부모"
+	xmlns:hello="http://www.example.org/HelloCategory"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/HelloCategory xmlSchema/HelloCategory.xsd ">
+	<hello:category name="컴퓨터">
+		<hello:category name="LCD 모니터">
+			<hello:category name="15형 이하"></hello:category>
+			<hello:category name="17형"></hello:category>
+			<hello:category name="19형"></hello:category>
+			<hello:category name="20형"></hello:category>
+			<hello:category name="22형"></hello:category>
+			<hello:category name="24형 이상"></hello:category>
+		</hello:category>
+		<hello:category name="LCD 주변기기">
+			<hello:category name="보안대"></hello:category>
+			<hello:category name="거치대"></hello:category>
+			<hello:category name="케이블"></hello:category>
+		</hello:category>
+		<hello:category name="HDD/ODD">
+			<hello:category name="데스크탑 HDD">
+				<hello:category name="3.5인치"></hello:category>
+				<hello:category name="2.5인치"></hello:category>
+			</hello:category>
+			<hello:category name="노트북 HDD"></hello:category>
+			<hello:category name="CD-ROM"></hello:category>
+			<hello:category name="CD-RW"></hello:category>
+			<hello:category name="COMBO"></hello:category>
+			<hello:category name="DVD-ROM/RW"></hello:category>
+			<hello:category name="BlueRay"></hello:category>
+		</hello:category>
+	</hello:category>
+	<hello:category name="의류">
+		<hello:category name="여성 의류"></hello:category>
+		<hello:category name="남성 의류"></hello:category>
+		<hello:category name="중성 의류"></hello:category>
+	</hello:category>
+
+	<hello:category name="순천대학교">
+		<hello:category name="연구실">
+			<hello:category name="DB&amp;IR">
+				<hello:category name="심춘보 교수님">
+					<hello:category name="선영훈" />
+					<hello:category name="손현순" />
+					<hello:category name="임은천" />
+					<hello:category name="양동화" />
+					<hello:category name="김제준" />
+					<hello:category name="나효환" />
+					<hello:category name="최윤신" />
+					<hello:category name="김길천" />
+					<hello:category name="김경종" />
+				</hello:category>
+			</hello:category>
+		</hello:category>
+	</hello:category>
+</hello:categories>

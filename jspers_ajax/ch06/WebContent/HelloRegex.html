@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Hello Regex - Form Validation</title>
+<script type="text/javascript" charset="UTF-8" language="javascript">
+window.onload = function() {
+	var regexTest = document.getElementById("regexTest");
+	var inputs = regexTest.getElementsByTagName("input");
+	inputs[0].onblur = function() {
+		verify(inputs[0], /\d+/g);
+	};
+	inputs[1].onblur = function() {
+		verify(inputs[1], /[a-zA-Z]/g);
+	};
+	inputs[2].onblur = function() {
+		verify(inputs[2], /[ㄱ-힣]/g);
+	};
+	inputs[3].onblur = function phoneVerify() {
+		var resultElem = document.getElementById("regexTest_Result");
+		if(!resultElem) {
+			resultElem = buildResultElement();
+		}
+		var matched = inputs[3].value.match(/\d{2,3}-\d{3,4}-\d{4}/);
+		if(matched) {
+			resultElem.innerHTML = "";
+			inputs[3].value = matched.toString().replace(/,/g, "");
+		} else {
+			resultElem.innerHTML = "값이 잘못 되었습니다. 국번-앞번호-뒷번호 형태를 따라 주세요."
+			inputs[3].focus();
+		}
+	};
+	inputs[3].onkeydown = function(evt) {
+		var keyCode = (evt) ? evt.which : event.keyCode;
+		var VK_TAB = 9;
+		if(VK_TAB == keyCode) {
+			phoneVerify();
+			if(evt) {
+				evt.preventDefault();
+				evt.stopPropagation();
+			} else {
+				event.returnValue = false;
+				event.cancelBubble = true;
+			}
+		}
+	};	
+}
+
+function verify(targetElem, regex) {
+	var matched = targetElem.value.match(regex);
+	matched = (matched) ? matched.toString().replace(/,/g, "") : "";
+	targetElem.value = matched;
+}
+
+function buildResultElement() {
+	var resultElem = document.createElement("div");
+	resultElem.id = "regexTest_Result";
+	resultElem.style.color = "red";
+	document.body.appendChild(resultElem);
+	return resultElem;
+}
+</script>
+</head>
+<body>
+	<form id="regexTest" name="regexTest">
+		<input type="text" name="number"/>
+		<input type="text" name="english"/>
+		<input type="text" name="hangul"/>
+		<input type="text" name="phone"/>
+	</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" creationComplete="startReceive();">
+<mx:Script>
+	<![CDATA[
+		import mx.messaging.events.MessageFaultEvent;
+		import mx.controls.Alert;
+		import mx.messaging.events.MessageEvent;
+		import mx.messaging.messages.AsyncMessage;
+		private function startReceive():void {
+			reader.subscribe();
+		}
+		private function send():void {
+			var message:AsyncMessage = new AsyncMessage();
+			message.body.userId = userId.text;
+			message.body.msg = messageBox.text;
+			sender.send(message);
+			messageBox.text = "";
+		}
+		private function messageHandler(event:MessageEvent):void {
+			var body:Object = event.message.body;
+			received.text += body.userId + " : " + body.msg + "\n";
+		}
+	]]>
+</mx:Script>
+	<mx:Label x="10" y="12" text="사용자 id" id="lblUserId"/>
+	<mx:TextInput x="76" y="10" id="userId"/>	
+	
+	<mx:Label x="10" y="56" text="받은 내용" id="lblReceived"/>
+	<mx:TextArea x="76" y="40" width="222" height="108" id="received" editable="false"/>
+	
+	<mx:Label x="10" y="157" text="보낼 내용" id="lblMessage"/>
+	<mx:TextArea x="76" y="156" id="messageBox" height="118" width="222"/>
+	
+	<mx:Button x="239" y="282" label="보내기" id="btnSend" click="send();" />
+	
+	<mx:Producer id="sender" destination="helloFlexChatting" />
+	<mx:Consumer id="reader" destination="helloFlexChatting" message="messageHandler(event);" />	
+</mx:Application>

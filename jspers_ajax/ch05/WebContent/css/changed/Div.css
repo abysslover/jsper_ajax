@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+div {
+	border:				solid 1px;
+}
+
+#parentDiv {
+	border:				border 2px lime;
+}
+
+div > div {
+	color: 				blue;
+}

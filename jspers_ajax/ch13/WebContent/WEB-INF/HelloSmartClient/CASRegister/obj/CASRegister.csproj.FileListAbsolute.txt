@@ -1,0 +1,8 @@
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\CASRegister\bin\Release\CASRegister.exe
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\CASRegister\bin\Release\CASRegister.pdb
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\CASRegister\obj\Release\ResolveAssemblyReference.cache
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\CASRegister\obj\Release\CASRegister.CASRegister.resources
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\CASRegister\obj\Release\CASRegister.Properties.Resources.resources
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\CASRegister\obj\Release\CASRegister.csproj.GenerateResource.Cache
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\CASRegister\obj\Release\CASRegister.exe
+C:\eclipseEuropaFall2\workspace\ch13\WebContent\WEB-INF\HelloSmartClient\CASRegister\obj\Release\CASRegister.pdb

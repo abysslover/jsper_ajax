@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person SYSTEM "dtd/HelloDTD.dtd" >
+<person age="26" birth="1982. 07. 02" name="임은천">
+  <name>Magneto</name>
+  <address>
+  	<nation>
+  		<item label="한국" code="1" ></item><item label="천국" code="2" />
+  	</nation>
+  	<state>
+  		<item label="전라남도" code="1" />
+  	</state>
+  	<city>
+  		<item label="순천시" code="1" />
+  	</city>
+  	<street>
+  		<item label="매곡동" code="1" />
+  	</street>
+  </address>
+</person>

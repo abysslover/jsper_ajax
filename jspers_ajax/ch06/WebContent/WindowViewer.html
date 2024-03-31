@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Window Viewer</title>
+<script language="Javascript" src="js/Window.js"></script>
+<script language="Javascript">
+	var helloWindow;
+	window.onload = function(evt) {
+		helloWindow = new Window();
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="윈도우 보이기" onclick="helloWindow.setVisible(true);" />
+	<input type="button" value="윈도우 숨기기" onclick="helloWindow.setVisible(false);" />
+	<input type="text" id="windowTitle" name="windowTitle" />
+	<input type="button" value="제목 설정" onclick="helloWindow.setTitle(windowTitle.value);" /><p />
+	<textarea id="windowContent" name="windowContent"></textarea>
+	<input type="button" value="내용 설정" onclick="helloWindow.setContent(windowContent.value);" />
+	<input type="text" id="windowStatusMessage" name="windowStatusMessage" />
+	<input type="button" value="상태 표시메시지  설정" onclick="helloWindow.setStatusMessage(windowStatusMessage.value);" /><p />
+	<input type="text" id="windowProcessed" name="windowProcessed" />
+	<input type="button" value="처리량 설정" onclick="helloWindow.setProcessed(windowProcessed.value);" /><p />
+	<input type="text" id="progressImage" name="progressImage" />
+	<input type="button" value="처리 이미지 설정" onclick="helloWindow.setProgressImageSrc(progressImage.value);" />
+</body>
+</html>

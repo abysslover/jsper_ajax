@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://ikstyle.net"
+	xmlns:kangik="http://ikstyle.net" elementFormDefault="qualified">
+
+    <element name="glossary" type="kangik:GlossaryType"></element>
+    
+    <complexType name="GlossaryType">
+    	<sequence>
+    		<element name="car" type="kangik:CarType" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="CarType">
+    	<sequence>
+    		<element name="info" type="string"></element>
+    	</sequence>
+    	<attribute name="owner" type="string"></attribute>
+    </complexType>
+    
+
+    <attributeGroup name="InfoAttributeGroup">
+    	<attribute name="cc" type="int"></attribute>
+    	<attribute name="length" type="float"></attribute>
+    	<attribute name="weight" type="float"></attribute>
+    	<attribute name="price" type="int"></attribute>
+    </attributeGroup>
+</schema>

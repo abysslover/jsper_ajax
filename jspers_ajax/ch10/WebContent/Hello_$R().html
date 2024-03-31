@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Hello $R()</title>
+<script language="Javascript" src="js/prototype.js"></script>
+<script language="Javascript"><!--
+	Event.observe(window, 'load', function() {
+/*		for(var i=0; i<11; ++i) {
+			$("Hello"+i).onclick = function(evt, i) {
+				report(evt);
+				report(i);
+				report("id : Hello"+i + " Name : " + $('Hello'+i).firstChild.nodeValue);
+			};
+		}
+*/
+		$R(0, 10, false).each(function(helloIndex, protoIndex) {
+			$("Hello"+helloIndex).onclick = function(evt) {
+				alert(protoIndex);
+				report("id : Hello" + helloIndex + " Name : " +
+				$('Hello'+helloIndex).firstChild.nodeValue);	
+			};
+		});
+	});
+	
+	function report(data) {
+		var result = $('result');
+		if(null == result) return;
+		var funcDefinition = report.caller.toString();
+		result.innerHTML = funcDefinition + "<p />" + data;
+	}
+</script>
+</head>
+<body>
+	<div id="Hello0">Professor X</div>
+	<div id="Hello1">Magneto</div>
+	<div id="Hello2">Juggernaut</div>
+	<div id="Hello3">Phoenix</div>
+	<div id="Hello4">ArchAngel</div>
+	<div id="Hello5">Wolverine</div>
+	<div id="Hello6">Cyclops</div>
+	<div id="Hello7">Psylocke</div>
+	<div id="Hello8">Ice Man</div>
+	<div id="Hello9">Storm</div>
+	<div id="Hello10">Colossus</div>
+	<div id="result"></div>
+</body>
+</html>

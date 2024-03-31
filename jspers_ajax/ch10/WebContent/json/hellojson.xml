@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hello id="hello1">
+	<to>magneto</to>
+	<from>tomcat</from>
+	<message>Nice to meet you!</message>
+</hello>

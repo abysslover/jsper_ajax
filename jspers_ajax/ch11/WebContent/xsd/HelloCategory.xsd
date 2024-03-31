@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.javawide.com/HelloCategory" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:jwide="http://www.javawide.com/HelloCategory">
+
+    <annotation>
+    	<documentation>간단한 카테고리 예제를 위한 XML Schema 입니다.</documentation>
+    </annotation>
+    <element name="categories" type="jwide:CategoryType"></element>
+    
+    <complexType name="CategoryType">
+    	<sequence>
+    		<element name="category" type="jwide:CategoryType"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    	<attribute name="name" type="string"></attribute>
+    </complexType>
+    
+</schema>

@@ -1,0 +1,35 @@
+{"jwide:categories": {
+ "jwide:category": [
+  {
+   "jwide:category": {
+    "jwide:category": [
+     {
+      "jwide:category": {
+       "jwide:category": {"name": "test2"},
+       "name": "test"
+      },
+      "name": "15인치 이하"
+     },
+     {"name": "17인치"},
+     {"name": "19인치"},
+     {"name": "20인치"},
+     {"name": "22인치"},
+     {"name": "24인치 이상"}
+    ],
+    "name": "LCD 모니터"
+   },
+   "name": "컴퓨터"
+  },
+  {
+   "jwide:category": [
+    {"name": "남성옷"},
+    {"name": "여성옷"}
+   ],
+   "name": "옷"
+  }
+ ],
+ "name": "카테고리 부모",
+ "xmlns:jwide": "http://www.javawide.com/HelloCategory",
+ "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+ "xsi:schemaLocation": "http://www.javawide.com/HelloCategory xsd/HelloCategory.xsd "
+}}

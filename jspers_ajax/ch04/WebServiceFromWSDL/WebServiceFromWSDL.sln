@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceFromWSDL", "WebServiceFromWSDL\WebServiceFromWSDL.csproj", "{81FD5EA1-AB6D-4FDF-9E76-38B3175AF9B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81FD5EA1-AB6D-4FDF-9E76-38B3175AF9B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81FD5EA1-AB6D-4FDF-9E76-38B3175AF9B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81FD5EA1-AB6D-4FDF-9E76-38B3175AF9B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81FD5EA1-AB6D-4FDF-9E76-38B3175AF9B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

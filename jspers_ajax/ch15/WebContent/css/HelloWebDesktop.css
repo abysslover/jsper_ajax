@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+@import url(HelloTaskManager.css);
+@import url(HelloDesktop.css);
+@import url(HelloWindow.css);
+@import url(FileExplorer.css);
+* {
+	margin:		0px;
+	padding:	0px;
+}

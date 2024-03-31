@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Prototype Inheritance</title>
+<script language="Javascript">
+	function Father() {
+		this.name = "Father";
+		this.hello = function() {
+			alert("Hello " + this.name);
+		}
+		this.show = function() {
+			var report = document.getElementById("report");
+			report.innerHTML = "";
+			for(var attr in this) {
+				report.innerHTML += attr + " : " + this[attr] + " ";
+			}
+		};
+	}
+	function Son() {
+		this.name = "Son";
+	}
+	Son.prototype = new Father();
+	var father = new Father();
+	var son = new Son();
+</script>
+</head>
+<body>
+	<input type="button" value="부모 객체" onclick="father.hello();father.show();" />
+	<input type="button" value="자식 객체" onclick="son.hello();son.show();" />
+	<div id="report"></div>
+</body>
+</html>

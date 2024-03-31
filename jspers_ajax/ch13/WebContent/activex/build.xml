@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     2008. 03. 21 오후 10:12:44                                                        
+
+     Hello ActiveX    
+     Hello ActiveX의 파일을 cab 파일로 만듭니다.
+                   
+     magneto                                                                
+     ====================================================================== -->
+<project name="Hello ActiveX" default="default" basedir="..">
+	<description>
+    	Hello ActiveX의 파일을 cab 파일로 만듭니다.
+    </description>
+	<property name="mode" value="Release" />
+	<property name="srcdir" value="${basedir}/WEB-INF/HelloActiveX/HelloActiveX/${mode}" />
+	<property name="dstdir" value="${basedir}/activex" />
+	<!-- ================================= 
+          target: default              
+         ================================= -->
+	<target name="default" description="--> Hello ActiveX 테스트 인증서 생성">
+		<echo message="${srcdir} -> ${dstdir}" />
+		<antcall target="makeCert" />
+		<antcall target="makeCab" />
+		<antcall target="signCab" />
+		<copy todir="${dstdir}" overwrite="true">
+			<fileset file="${srcdir}/HelloActiveX.cab" />
+		</copy>
+	</target>
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: makeCert                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="makeCert">
+		<exec dir="${srcdir}" executable="cmd">
+			<arg value="/c" />
+			<arg value="setreg" />
+			<arg value="1" />
+			<arg value="TRUE" />
+		</exec>
+		<exec dir="${srcdir}" executable="makecert">
+			<arg value="-n" />
+			<arg value='"cn=Lim Eun Cheon, o=javawide.com, l=Suncheon, s=Jeolla, C=Korea"' />
+			<arg value="-sv" />
+			<arg value="HelloActiveX.pvk" />
+			<arg value="HelloActiveX.cer" />
+		</exec>
+		<exec dir="${srcdir}" executable="cert2spc">
+			<arg value="HelloActiveX.cer" />
+			<arg value="HelloActiveX.spc" />
+		</exec>
+	</target>
+	<target name="makeCab">
+		<exec dir="${srcdir}" executable="cabarc">
+			<arg value="-s" />
+			<arg value="6144" />
+			<arg value="N" />
+			<arg value="HelloActiveX.cab" />
+			<arg value="HelloActiveX.inf" />
+			<arg value="HelloActiveX.dll" />
+		</exec>
+	</target>
+	<target name="signCab">
+		<exec dir="${srcdir}" executable="signcode">
+			<arg value="-spc" />
+			<arg value="HelloActiveX.spc" />
+			<arg value="-v" />
+			<arg value="HelloActiveX.pvk" />
+			<arg value="-n" />
+			<arg value='"HelloActiveX"' />
+			<arg value="-i" />
+			<arg value='"http://localhost"' />
+			<arg value="HelloActiveX.cab" />
+		</exec>
+	</target>
+</project>
