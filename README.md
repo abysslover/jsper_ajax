@@ -1,2 +1,2 @@
 # JSPer's Ajax
-For the blackbook (JSPer's AJAX)
+All the source code for the blackbook (JSPer's AJAX) written by Eun-Cheon Lim.
